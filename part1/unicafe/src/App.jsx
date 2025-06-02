@@ -31,12 +31,16 @@ const Statistics = ({ good, bad, neutral }) => {
       <h1>
         statistics
       </h1>
-      <StatisticLine text="good" value={good}/>
-      <StatisticLine text="neutral" value={neutral}/>
-      <StatisticLine text="bad" value={bad}/>
-      <StatisticLine text="total" value={total}/>
-      <StatisticLine text="avg." value={(good - bad) / (total)}/>
-      <StatisticLine text="positive %" value={(good) * 100 / (total)}/>
+      <table>
+        <tbody>
+          <StatisticLine text="good" value={good}/>
+          <StatisticLine text="neutral" value={neutral}/>
+          <StatisticLine text="bad" value={bad}/>
+          <StatisticLine text="total" value={total}/>
+          <StatisticLine text="avg." value={(good - bad) / (total)}/>
+          <StatisticLine text="positive %" value={(good) * 100 / (total)}/>
+        </tbody>
+      </table>
     </div>
   ) : (<p>No feedback given</p>)
 }
@@ -48,7 +52,12 @@ const Button = ({text, handler}) => {
 }
 
 const StatisticLine = ({ text, value }) => {
-  return (<p>{text} {value}</p>)
+  return (
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
+  )
 }
 
 export default App
