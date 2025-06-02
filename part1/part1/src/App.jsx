@@ -23,20 +23,22 @@ const App = () => {
 
 const Header = ({course}) => {
   return (
-      <h1>{course}</h1>
-   )
+    <h1>{course}</h1>
+  )
 }
 
 const Content = ({content}) => {
-      return(
-      <>
-        {content.map((item, index) => (
-          <p key={index}>
-            {item.name} {item.exercises}
-          </p>
-        ))}
-      </>
-      )
+  return(
+    <div>
+      { content.map( item => <Part name = {item.name} exercises = {item.exercises}/> ) }
+    </div>
+  )
+}
+
+const Part = ({name, exercises}) => {
+  return (
+    <p> {name} {exercises} </p>
+  )
 }
 
 const Total = ({total}) => {
