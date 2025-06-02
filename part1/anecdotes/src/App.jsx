@@ -11,18 +11,23 @@ const App = () => {
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.',
     'The only way to go fast, is to go well.'
   ]
+  const [votes, setVotes] = useState(Object.fromEntries(anecdotes.map((val, idx) => [idx, 0])));
    
   const [selected, setSelected] = useState(0)
-  function getRandomInt(min, max) {
+  const getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   return (
     <div>
-      {anecdotes[selected]}
-      <br/>
+      <h1>Anecdote of the day</h1>
+      <p>{anecdotes[selected]}</p>
+      <p>Has {votes[selected]} votes</p>
       <button onClick={() => setSelected(() => getRandomInt(0, anecdotes.length - 1))}>next anecdote</button>
+      <button onClick={() => setVotes(prevVotes => ({...prevVotes,[selected]: prevVotes[selected] + 1})) }>vote</button>
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[Object.keys(votes).reduce((a, b) => votes[a] > votes[b] ? a : b)]}
     </div>
   )
 }
