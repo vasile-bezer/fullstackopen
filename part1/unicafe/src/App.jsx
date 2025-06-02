@@ -29,7 +29,8 @@ const App = () => {
 }
 
 const Statistics = ({ good, bad, neutral }) => {
-  return (
+  const total = good + neutral + bad;
+  return total > 0 ? (
     <div>
       <h1>
         statistics
@@ -37,11 +38,11 @@ const Statistics = ({ good, bad, neutral }) => {
       <p>good {good}</p>
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
-      <p>total {good + neutral + bad}</p>
-      <p>avg. {(good - bad) / (good + neutral + bad)}</p>
-      <p>positive % {(good) * 100 / (good + neutral + bad)}</p>
+      <p>total {total}</p>
+      <p>avg. {(good - bad) / (total)}</p>
+      <p>positive % {(good) * 100 / (total)}</p>
     </div>
-  )
+  ) : (<p>No feedback given</p>)
 }
 
 export default App
