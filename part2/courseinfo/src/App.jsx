@@ -29,11 +29,11 @@ const Course = ({course}) => {
 		<div>
 			<Header course={course.name} />
 			<Content parts={course.parts} />
-			
+			<Total parts={ course.parts } />
 		</div>
   	)
 }
-// <Total total={ course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises } />
+
 const Header = (props) => <h1>{props.course}</h1>
 
 const Content = (props) => (
@@ -48,6 +48,12 @@ const Part = (props) => (
 	</p>
 )
 
-const Total = (props) => <p>Number of exercises {props.total}</p>
+const Total = (props) => {
+	const { parts } = props;
+	const total = parts.reduce( (sum, item) => sum + item.exercises, 0 );
+	return (
+		<p>Number of exercises {total}</p>
+	);
+}
 
 export default App
