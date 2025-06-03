@@ -18,13 +18,13 @@ jobs:
         run: curl https://cli-assets.heroku.com/install.sh | sh
 
       - name: Set Heroku stack to container (only needed once)
-        run: heroku stack:set container --app ${{ secrets.HEROKU_APP_NAME }}
+        run: heroku stack:set container --app ${{ secrets.HEROKU_UNICAFE_APP_NAME }}
 
       - name: Deploy with akhileshns/heroku-deploy
         uses: akhileshns/heroku-deploy@v3.14.15
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_app_name: ${{ secrets.HEROKU_UNICAFE_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
           usedocker: true
           appdir: part1/unicafe
