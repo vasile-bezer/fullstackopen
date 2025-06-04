@@ -8,10 +8,10 @@ const App = () => {
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-		if (!!newName){
-			setPersons(persons.concat({
-				name: newName
-			}))
+		const newPerson = { name: newName }
+		if (persons.some((person => JSON.stringify(person) === JSON.stringify(newPerson)))) { return alert(`${newName} is already in the phonebook`)}
+		if ( !!newName ){
+			setPersons(persons.concat(newPerson))
 		}
 		setNewName("")
 	}
