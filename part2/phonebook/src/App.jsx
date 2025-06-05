@@ -16,7 +16,7 @@ const App = () => {
 		event.preventDefault();
 
 		const newPerson = { name: newName, number: newNumber }
-		if ( persons.some((person => JSON.stringify(person) === JSON.stringify(newPerson))) ) { return alert(`${newName} is already in the phonebook`); }
+		if ( persons.some((person => person.name === newPerson.name)) ) { return alert(`${newName} is already in the phonebook`); }
 		if ( !!newName ){ 
 			axios
     		.post('http://localhost:3001/persons', newPerson)
