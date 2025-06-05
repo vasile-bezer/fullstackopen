@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const App = () => {
-	const [persons, setPersons] = useState([{ name: 'Arto Hellas' }]);
+	const [persons, setPersons] = useState([]);
 	const [newName, setNewName] = useState("");
 	const [newNumber, setNewNumber] = useState("");
 	const [filter, setFilter] = useState("");
@@ -17,9 +17,15 @@ const App = () => {
 
 		const newPerson = { name: newName, number: newNumber }
 		if ( persons.some((person => JSON.stringify(person) === JSON.stringify(newPerson))) ) { return alert(`${newName} is already in the phonebook`); }
-		if ( !!newName ){ setPersons(persons.concat(newPerson)); }
-		setNewName("");
-		setNewNumber("");
+		if ( !!newName ){ 
+			axios
+    		.post('http://localhost:3001/persons', newPerson)
+    		.then(response => {
+				setPersons(persons.concat(response.data));
+				setNewName("");
+				setNewNumber("");
+		    })
+		}
 	}
 
 	useEffect(() => {
@@ -28,7 +34,7 @@ const App = () => {
 			.then(response => {
 				setPersons(response.data)
 			})
-	}, [])
+	}, []);
 
 	return (
 		<div>
@@ -80,7 +86,7 @@ const Persons = (props) => {
 	const {filteredPersons} = props;
 
 	return (
-		<div>{ filteredPersons.map( person => (<p key={person.name}>{person.name} {person.number}</p>) ) }</div>
+		<div>{ filteredPersons.map( person => (<p key={person.id}>{person.name} {person.number}</p>) ) }</div>
 	)
 }
 
