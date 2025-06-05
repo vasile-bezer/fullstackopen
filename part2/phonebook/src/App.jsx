@@ -14,9 +14,35 @@ const App = () => {
 
 	const submitHandler = (event) => {
 		event.preventDefault();
-
 		const newPerson = { name: newName, number: newNumber }
-		if ( persons.some((person => person.name === newPerson.name)) ) { return alert(`${newName} is already in the phonebook`); }
+		
+		const found = persons.find(person => person.name === newPerson.name);
+		if (found) {
+			if (newPerson.number && !found.number) {
+				return personsService.update(found.id, newPerson)
+				.then(
+					response => {
+						setPersons(persons.map(p => p.id !== found.id ? p : response.data))
+					},
+					error => {
+						return error;
+					}
+				);
+			} else if (newPerson.number && found.number) {
+				if (!confirm(`update ${found.name}?`)) return;
+				return personsService.update(found.id, newPerson)
+				.then(
+					response => {
+						setPersons(persons.map(p => p.id !== found.id ? p : response.data))
+					},
+					error => {
+						return error;
+					}
+				);;
+			}
+			return alert(`${newName} is already in the phonebook`);
+		}
+
 		if ( !!newName ){ 
     		personsService.create(newPerson)
     		.then(response => {
