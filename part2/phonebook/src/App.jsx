@@ -27,6 +27,20 @@ const App = () => {
 		}
 	}
 
+	const deleteHandler = (id, name) => {
+		if(!confirm(`delete ${name}?`)) return;
+		
+		personsService.remove(id)
+		.then(
+			(response) => {
+        		setPersons( persons.filter(person => person.id !== id) )
+     		}
+			,(error) => {
+				console.error("Failed to delete:", error)
+			}
+		);
+	}
+
 	useEffect(() => {
 		personsService.getAll()
 		.then(response => {
@@ -47,7 +61,7 @@ const App = () => {
 				submitHandler={submitHandler}
 			/>
 			<h2>Numbers</h2>
-			<Persons filteredPersons={filteredPersons}/>
+			<Persons filteredPersons={filteredPersons} deleteHandler={deleteHandler}/>
 		</div>
 	)
 }
@@ -82,9 +96,22 @@ const PersonForm = (props) => {
 
 const Persons = (props) => {
 	const {filteredPersons} = props;
-
+	const {deleteHandler} = props;
 	return (
-		<div>{ filteredPersons.map( person => (<p key={person.id}>{person.name} {person.number}</p>) ) }</div>
+		<div>
+			{ 
+				filteredPersons.map( 
+					person => {
+						return (
+							<p key={person.id}>
+								{person.name} {person.number}
+								<button onClick={() => deleteHandler(person.id, person.name)}>delete</button>
+							</p>
+						)
+ 					}
+				)
+			}
+		</div>
 	)
 }
 
