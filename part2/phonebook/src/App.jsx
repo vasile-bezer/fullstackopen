@@ -29,6 +29,8 @@ const App = () => {
 						setTimeout(() => {setMessage(null)}, 5000)
 					},
 					error => {
+						setMessage({text: `Person not found on server`, type: "error"})
+						setTimeout(() => {setMessage(null)}, 5000)
 						return error;
 					}
 				);
@@ -42,6 +44,8 @@ const App = () => {
 						setTimeout(() => {setMessage(null)}, 5000)
 					},
 					error => {
+						setMessage({text: `Person not found on server`, type: "error"})
+						setTimeout(() => {setMessage(null)}, 5000)
 						return error;
 					}
 				);;
