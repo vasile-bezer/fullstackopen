@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import personsService from "./services/persons"
+import './index.css'
 
 const App = () => {
 	const [persons, setPersons] = useState([]);
 	const [newName, setNewName] = useState("");
 	const [newNumber, setNewNumber] = useState("");
 	const [filter, setFilter] = useState("");
+	const [message, setMessage] = useState(null)
 
 	const filteredPersons = persons.filter(person =>
 		person.name.toLowerCase().includes(filter.toLowerCase()) || (person.number && person.number.includes(filter))
@@ -18,22 +20,26 @@ const App = () => {
 		
 		const found = persons.find(person => person.name === newPerson.name);
 		if (found) {
-			if (newPerson.number && !found.number) {
+			if (newPerson.number && !!!found.number) {
 				return personsService.update(found.id, newPerson)
 				.then(
 					response => {
 						setPersons(persons.map(p => p.id !== found.id ? p : response.data))
+						setMessage({text: `Successfully updated id '${response.data.id}'`, type: "success"})
+						setTimeout(() => {setMessage(null)}, 5000)
 					},
 					error => {
 						return error;
 					}
 				);
-			} else if (newPerson.number && found.number) {
+			} else if (newPerson.number && !!found.number) {
 				if (!confirm(`update ${found.name}?`)) return;
 				return personsService.update(found.id, newPerson)
 				.then(
 					response => {
 						setPersons(persons.map(p => p.id !== found.id ? p : response.data))
+						setMessage({text: `Successfully updated id '${response.data.id}'`, type: "success"})
+						setTimeout(() => {setMessage(null)}, 5000)
 					},
 					error => {
 						return error;
@@ -46,6 +52,8 @@ const App = () => {
 		if ( !!newName ){ 
     		personsService.create(newPerson)
     		.then(response => {
+				setMessage({text: `Successfully created id '${response.data.id}'`, type: "success"})
+				setTimeout(() => {setMessage(null)}, 5000)
 				setPersons(persons.concat(response.data));
 				setNewName("");
 				setNewNumber("");
@@ -77,6 +85,7 @@ const App = () => {
 	return (
 		<div>
 			<h2>Phonebook</h2>
+			<Notification message={message} />
 			<Filter filter={filter} setFilter={setFilter}/>
 			<h2>add a new</h2>
 			<PersonForm 
@@ -141,5 +150,17 @@ const Persons = (props) => {
 	)
 }
 
+const Notification = ({ message }) => {
+	if (message === null) {
+		return null
+	}
+	
+	const {text, type} = message
+	return (
+		<div className={type}>
+    		{text}
+    	</div>
+  	)
+}
 
 export default App
