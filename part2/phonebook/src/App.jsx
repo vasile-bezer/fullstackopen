@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import personsService from "./services/persons"
 
 const App = () => {
 	const [persons, setPersons] = useState([]);
@@ -18,8 +18,7 @@ const App = () => {
 		const newPerson = { name: newName, number: newNumber }
 		if ( persons.some((person => person.name === newPerson.name)) ) { return alert(`${newName} is already in the phonebook`); }
 		if ( !!newName ){ 
-			axios
-    		.post('http://localhost:3001/persons', newPerson)
+    		personsService.create(newPerson)
     		.then(response => {
 				setPersons(persons.concat(response.data));
 				setNewName("");
@@ -29,11 +28,10 @@ const App = () => {
 	}
 
 	useEffect(() => {
-		axios
-			.get('http://localhost:3001/persons')
-			.then(response => {
-				setPersons(response.data)
-			})
+		personsService.getAll()
+		.then(response => {
+			setPersons(response.data)
+		})
 	}, []);
 
 	return (
