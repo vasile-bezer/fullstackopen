@@ -11,7 +11,6 @@ const App = () => {
 			axios
 			.get(`https://studies.cs.helsinki.fi/restcountries/api/all`)
 			.then(response => {
-				console.log(response.data)
 				setCountries(response.data)
 			})
 		}
@@ -61,6 +60,34 @@ const App = () => {
 	)
 }
 
+const Weather = ({ city }) => {
+    const [weather, setWeather] = useState(null)
+    const api_key = import.meta.env.VITE_OPENWEATHER_API_KEY
+
+    useEffect(() => {
+        if (!city) return
+        axios.get(
+			"https://api.openweathermap.org/data/2.5/weather"
+			,{ params: { q: city, appid: api_key, units: 'metric' } }
+		).then(
+			(response) => setWeather(response.data)
+		)
+    }, [city, api_key])
+
+	return !weather ? (
+		<p>Loading weather...</p>
+	) : (
+		<div>
+			<h3>Weather in {city}</h3>
+			<p>Temperature: {weather.main.temp} °C</p>
+			{weather.weather?.[0]?.icon && (
+				<img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+			)}
+			<p>Wind: {weather.wind.speed} m/s</p>
+		</div>
+	)
+}
+
 const renderCountryDetails = (country) => (
 	<div key={country.ccn3}>
 		<h2>{country.name.common}</h2>
@@ -72,7 +99,8 @@ const renderCountryDetails = (country) => (
 				<li key={code}>{name}</li>
 			))}
 		</ul>
-		<img src={country.flags?.png} alt={`Flag of ${country.name.common}`} width="150"/>
+		<img src={country.flags?.png} />
+		{country.capital?.[0] && <Weather city={country.capital[0]} />}
 	</div>
 )
 
