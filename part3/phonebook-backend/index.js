@@ -75,7 +75,7 @@ app.post('/api/persons', (request, response) => {
 	const person = {
 		name: body.name,
 		number: body.number,
-		id: Math.floor(Math.random() * 1000000),
+		id: Math.floor(Math.random() * 1000000).toString(),
 	}
 
 	persons = persons.concat(person)
