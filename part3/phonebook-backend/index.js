@@ -4,6 +4,8 @@ const cors = require('cors')
 
 const app = express()
 
+app.use(express.static('dist'))
+
 const allowedOrigin = process.env.FRONTEND_ORIGIN || 'http://localhost:5173'
 app.use(cors({origin: allowedOrigin}))
 
