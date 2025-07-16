@@ -1,7 +1,12 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 
 const app = express()
+
+const allowedOrigin = process.env.FRONTEND_ORIGIN || 'http://localhost:5173'
+app.use(cors({origin: allowedOrigin}))
+
 app.use(express.json())
 morgan.token('post-data', (req) => {
   if (req.method === 'POST') {
