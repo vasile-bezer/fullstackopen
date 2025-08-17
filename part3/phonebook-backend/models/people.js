@@ -15,8 +15,17 @@ mongoose
 	})
 
 const personsSchema = new mongoose.Schema({
-	name: String,
-	number: String,
+	name: {type: String, required: true, minlength: 3},
+	number: {
+		type: String,
+		minlength: 8,
+		validate: {
+			validator: function(v) {
+				return /^(\d{2,3})-(\d+)$/.test(v)
+			},
+			message: "Invalid phone number format"
+		}
+	}
 })
 
 personsSchema.set('toJSON', {
@@ -26,5 +35,12 @@ personsSchema.set('toJSON', {
     delete returnedObject.__v
   }
 })
+
+personsSchema.pre(
+	['findOneAndUpdate', 'updateOne', 'updateMany'],
+	function() {
+  		this.setOptions({ runValidators: true })
+	}
+)
 
 module.exports = mongoose.model('Person', personsSchema)
