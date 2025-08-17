@@ -1,0 +1,776 @@
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "AWS",
+  "number": "cloud-platform"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Kubernetes",
+  "number": "container-orchestration"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Cassandra",
+  "number": "nosql-database"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Kafka",
+  "number": "message-broker"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Spark",
+  "number": "big-data-processing"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Jenkins",
+  "number": "ci-cd-pipeline"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "PostgreSQL",
+  "number": "sql-database"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Elasticsearch",
+  "number": "search-engine"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Docker",
+  "number": "containerization"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Neo4j",
+  "number": "graph-database"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Heroku",
+  "number": "cloud-platform"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "IBM Watson",
+  "number": "ai-platform"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Raspberry Pi",
+  "number": "hardware"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Facebook",
+  "number": "social-platform"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Git Actions",
+  "number": "ci-cd"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "JavaScript",
+  "number": "programming-language"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Java",
+  "number": "programming-language"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Rust",
+  "number": "programming-language"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "White Box Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Black Box Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Hot Box Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Endurance Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Spike Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Availability Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Stress Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "V-Model",
+  "number": "methodology"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Agile",
+  "number": "methodology"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Microservices",
+  "number": "architecture"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Twitter",
+  "number": "social-platform"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Unit Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Functional Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Integration Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Scalability Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "System Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Acceptance Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Amazon S3",
+  "number": "object-storage"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Uber",
+  "number": "tech-company"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Netflix",
+  "number": "streaming-platform"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Load Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "DevOps",
+  "number": "practice"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Data Integration",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Data Processing",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Big Data",
+  "number": "technology"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Edge Computing",
+  "number": "technology"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Hybrid Systems",
+  "number": "architecture"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Cloud Computing",
+  "number": "technology"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Data Migration",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Distributed Systems",
+  "number": "architecture"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Monolith Platforms",
+  "number": "architecture"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Data Centers",
+  "number": "infrastructure"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "NFT",
+  "number": "blockchain"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Pacemaker Firmware",
+  "number": "embedded-systems"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Security Practices",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Deployment Pipeline",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Integration Pipeline",
+  "number": "process"
+}
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Continuous Integration",
+  "number": "practice"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Requirements Management",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Requirement Acquirement",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Maintainability",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Reliability",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Scalability",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Localization",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "User Acceptance",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Usability",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Compatibility",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Performance",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Portability",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Quality",
+  "number": "attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Safety",
+  "number": "quality-attribute"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Documentation",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Validation",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Verification",
+  "number": "process"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Operational Testing",
+  "number": "testing-method"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "It-Works is not non-functional requirement",
+  "number": "requirements"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Code Trashification",
+  "number": "coding methodology"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "DevOps Guy available on call 24/7",
+  "number": "Operations Team"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Another Guy for the rest",
+  "number": "Operations Team"
+}
+
+###
+
+POST http://localhost:3001/api/persons HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "And the Third Guy because you can't trust the Second Guy",
+  "number": "Operations Team"
+}
