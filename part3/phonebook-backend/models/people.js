@@ -4,28 +4,28 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery',false)
 
-console.log("connecting to", process.env.MONGODB_URI)
+console.log('connecting to', process.env.MONGODB_URI)
 mongoose
-	.connect(process.env.MONGODB_URI)
-	.then(result => {
-		console.log('connected to MongoDB')
-	})
-	.catch(error => {
-		console.log('error connecting to MongoDB:', error.message)
-	})
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('connected to MongoDB')
+  })
+  .catch(error => {
+    console.log('error connecting to MongoDB:', error.message)
+  })
 
 const personsSchema = new mongoose.Schema({
-	name: {type: String, required: true, minlength: 3},
-	number: {
-		type: String,
-		minlength: 8,
-		validate: {
-			validator: function(v) {
-				return /^(\d{2,3})-(\d+)$/.test(v)
-			},
-			message: "Invalid phone number format"
-		}
-	}
+  name: { type: String, required: true, minlength: 3 },
+  number: {
+    type: String,
+    minlength: 8,
+    validate: {
+      validator: function(v) {
+        return /^(\d{2,3})-(\d+)$/.test(v)
+      },
+      message: 'Invalid phone number format'
+    }
+  }
 })
 
 personsSchema.set('toJSON', {
@@ -37,10 +37,10 @@ personsSchema.set('toJSON', {
 })
 
 personsSchema.pre(
-	['findOneAndUpdate', 'updateOne', 'updateMany'],
-	function() {
-  		this.setOptions({ runValidators: true })
-	}
+  ['findOneAndUpdate', 'updateOne', 'updateMany'],
+  function() {
+    this.setOptions({ runValidators: true })
+  }
 )
 
 module.exports = mongoose.model('Person', personsSchema)

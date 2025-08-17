@@ -10,7 +10,7 @@
 // https://www.mongodb.com/docs/mongodb-vscode/playgrounds/
 
 // Select the database to use.
-use('mongodbVSCodePlaygroundDB');
+use('mongodbVSCodePlaygroundDB')
 
 // Insert a few documents into the sales collection.
 //db.getCollection('sales').insertMany([
@@ -25,11 +25,11 @@ use('mongodbVSCodePlaygroundDB');
 //]);
 
 db.getCollection('persons').insertMany([
-	{ "name": "Arto Hellas",  "number": "040-123456" },
-	{ "name": "Ada Lovelace",  "number": "39-44-5323523" },
-	{ "name": "Dan Abramov",  "number": "12-43-234345" },
-	{ "name": "Mary Poppendieck",  "number": "39-23-6423122" }
-]);
+  { 'name': 'Arto Hellas',  'number': '040-123456' },
+  { 'name': 'Ada Lovelace',  'number': '39-44-5323523' },
+  { 'name': 'Dan Abramov',  'number': '12-43-234345' },
+  { 'name': 'Mary Poppendieck',  'number': '39-23-6423122' }
+])
 
 
 // Run a find command to view items sold on April 4th, 2014.
